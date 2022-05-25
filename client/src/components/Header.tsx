@@ -104,6 +104,7 @@ const Header = () => {
         onClose={handleMenuClose}
       >
         <MenuItem onClick={handleMenuClose}>Профиль</MenuItem>
+<!--       выносить в отдельную функцию   -->
         <MenuItem onClick={(e) => {
           logoutHandler(e)
           handleMenuClose()
