@@ -47,6 +47,10 @@ const LoginPage = () => {
                     <Box sx={{ mt: 1 }}>
                         <Login />
                     </Box>
+                    <Typography component="h2" variant="h6" sx={{textAlign: 'center'}}>
+                        Администратор: test@test.ru testtest<br/>
+                        Пользователь: test2@test.ru testtest
+                    </Typography>
                 </Box>
             </Grid>
         </Grid>

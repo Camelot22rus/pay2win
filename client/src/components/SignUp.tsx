@@ -10,7 +10,7 @@ const SignUp = () => {
     const dispatch = useAppDispatch()
     
     const handleRegister = async (form: {email: string, password: string}) => {
-        axios.post('/api/auth/register', JSON.stringify(form))
+        axios.post('/api/auth/register', form)
         .then((response: AxiosResponse) => {
             dispatch(setUser({
                     id: response.data.userId,
