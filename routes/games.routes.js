@@ -1,5 +1,4 @@
 const {Router} = require('express')
-const config = require('config')
 const Games = require('../models/Games')
 const auth = require('../middleware/auth.middleware')
 const Uuid = require('uuid')
@@ -24,7 +23,7 @@ router.post('/add', auth, async (req, res) => {
 
     const existing = await Games.findOne({ title })
 
-    image.mv(config.get('staticPath') + "\\" + imageName)
+    image.mv(process.env.STATIC_PATH + "\\" + imageName)
 
     if (existing) {
       const updated = await Games.findOneAndUpdate({title}, {categories, imageName}, {

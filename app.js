@@ -1,24 +1,29 @@
 const express = require('express')
-const config = require('config')
 const path = require('path')
 const fileUpload = require("express-fileupload")
+const logger = require("morgan");
 const mongoose = require('mongoose')
 
 const app = express()
 
+app.use(logger("dev"));
 app.use(fileUpload({}))
-app.use(express.static('static'))
 app.use(express.json({ extended: true }))
 
 app.use('/api/auth', require('./routes/auth.routes'))
 app.use('/api/games', require('./routes/games.routes'))
 app.use('/api/goods', require('./routes/goods.routes'))
 
-const PORT = config.get('port') || 5000
+app.use('/', express.static(path.join(__dirname, 'client/build')))
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build/index.html'))
+} )
+
+const PORT = process.env.PORT || 5000
 
 async function start() {
   try {
-    await mongoose.connect(config.get('mongoUri'), {
+    await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true
@@ -32,3 +37,4 @@ async function start() {
 
 start()
 
+module.exports = app;

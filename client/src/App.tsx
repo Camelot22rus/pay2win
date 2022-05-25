@@ -10,7 +10,7 @@ const App = () => {
 
   return (
     <SnackbarProvider maxSnack={3}>
-        <BrowserRouter>
+        <BrowserRouter basename="/">
             {isAuth ?
               <>
                 <Header />

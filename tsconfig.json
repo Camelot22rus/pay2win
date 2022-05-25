@@ -20,6 +20,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "src",
-    "preserveSymlinks": true,
-  }
+  },
+  "include": [
+    "src"
+  ]
 }

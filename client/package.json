@@ -34,7 +34,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5000",
+  "homepage": "https://pay2win.vercel.app",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -46,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "resolutions": {
+        "ts-node": "8.0.2"
   }
 }

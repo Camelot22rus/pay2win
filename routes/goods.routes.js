@@ -1,5 +1,4 @@
 const {Router} = require('express')
-const config = require('config')
 const Goods = require('../models/Goods')
 const auth = require('../middleware/auth.middleware')
 const router = Router()

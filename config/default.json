@@ -1,7 +1,0 @@
-{
-  "port": 5000,
-  "jwtSecret": "Vadim Severikov MongoDB Pay2win",
-  "mongoUri": "mongodb+srv://vadimseverikov:mongodbpay2win@pay2win.vpedm.mongodb.net/?retryWrites=true&w=majority",
-  "baseUrl": "http://localhost:5000",
-  "staticPath": "D:\\pay2win\\static"
-}
