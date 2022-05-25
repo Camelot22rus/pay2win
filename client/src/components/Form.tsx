@@ -6,13 +6,13 @@ import TextField from '@mui/material/TextField'
 import Link from '@mui/material/Link'
 import Grid from '@mui/material/Grid'
 
-interface FormProps {
+interface Props {
     title: string,
     handleClick: (form: {email: string, password: string}) => void
     formLink: {linkTitle: string, linkUrl: string}
 }
 
-const Form: FC<FormProps> = ({ title, handleClick, formLink }) => {
+const Form: FC<Props> = ({ title, handleClick, formLink }) => {
     const [form, setForm] = useState({
       email: '', password: ''
     })
