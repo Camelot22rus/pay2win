@@ -11,16 +11,17 @@ import Grid from '@mui/material/Grid'
 import CircularProgress from '@mui/material/CircularProgress'
 import MenuItem from '@mui/material/MenuItem'
 
-interface IGame {
+interface Game {
   categories: string[] | null,
   imageName: string | null,
   title: string | null,
   _id: string | null,
 }
+// приставка I не используется и так поонятно, что это интерфейс.Также нарушается принцип инкапсуляции.
 
 const AddOffer: FC = () => {
     const [loading, setLoading] = useState<boolean>(true)
-    const [games, setGames] = useState<Array<IGame>>([])
+    const [games, setGames] = useState<Array<Game>>([])
     const [gameCategories, setGameCategories] = useState<Array<string>>([])
 
     const [offerTitle, setOfferTitle] = useState<string>('')
@@ -97,6 +98,8 @@ const AddOffer: FC = () => {
     const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setOfferCategory(event.target.value);
     };
+      
+        // categoryChangeHandler выше не прапвильно. Нарушает принципы чистого кода.
     
     useEffect(() => {
         getGames()
