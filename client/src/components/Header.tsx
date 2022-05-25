@@ -19,6 +19,8 @@ import AddIcon from '@mui/icons-material/Add';
 import MoreIcon from '@mui/icons-material/MoreVert'
 import Avatar from '@mui/material/Avatar'
 
+// вспомогательные функции в отдельный файл
+
 function stringToColor(string: string) {
   let hash = 0
   let i
