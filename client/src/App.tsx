@@ -3,7 +3,7 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import { SnackbarProvider } from 'notistack'
 import { HomePage, LoginPage, RegisterPage, GamePage, AddOfferPage } from './pages'
 import { useAuth } from 'hooks/use-auth'
-import Header from 'components/Header'
+import { MainHeader } from 'components/organisms/Headers'
 
 const App = () => {
   const {isAuth} = useAuth()
@@ -13,7 +13,7 @@ const App = () => {
         <BrowserRouter basename="/">
             {isAuth ?
               <>
-                <Header />
+                <MainHeader />
                 <Routes>
                   <Route path="/"  element={<HomePage />}/>
                   <Route path="/games" element={<HomePage />}/>
@@ -27,14 +27,16 @@ const App = () => {
                 </Routes>
               </>
             :
-              <Routes>
-                  <Route path="/"  element={<LoginPage />} />
-                  <Route path="/register"  element={<RegisterPage />} />
-                <Route
-                  path="*"
-                  element={<Navigate to="/" replace />}
-                />
-              </Routes>
+              <>
+                <Routes>
+                    <Route path="/"  element={<HomePage />} />
+                    <Route path="/register"  element={<RegisterPage />} />
+                  <Route
+                    path="*"
+                    element={<Navigate to="/" replace />}
+                  />
+                </Routes>
+              </>
             }
         </BrowserRouter>
     </SnackbarProvider>

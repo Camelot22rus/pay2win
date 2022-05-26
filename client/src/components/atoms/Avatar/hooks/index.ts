@@ -1,0 +1,1 @@
+export { useStringAvatar } from "./useStringAvatar";
